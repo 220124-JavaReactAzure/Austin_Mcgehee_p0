@@ -1,7 +1,7 @@
 package com.revature.project0.utils;
 
-import java.awt.Menu;
-import java.util.LinkedList;
+import com.revature.project0.utils.collections.LinkedList;
+import com.revature.project0.menus.Menu;
 
 public class MenuRouter {
 
