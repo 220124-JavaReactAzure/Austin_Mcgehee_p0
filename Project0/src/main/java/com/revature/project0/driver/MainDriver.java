@@ -7,7 +7,7 @@ public class MainDriver {
 	public static void main(String[] args) {
 		
 		AppState app = new AppState();
-		
+		app.startUp();
 
 	}
 
