@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 import com.revature.project0.menus.Start.StartMenu;
+import com.revature.project0.menus.Start.Login;
 
 public class AppState {
 
@@ -16,6 +17,7 @@ public class AppState {
 		BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
 		
 		router.addMenu(new StartMenu(consoleReader, router));
+		router.addMenu(new Login(consoleReader, router));
 		
 		
 	}
