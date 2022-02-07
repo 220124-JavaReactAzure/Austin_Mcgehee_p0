@@ -23,7 +23,7 @@ public class Login extends Menu {
 		System.out.println("Password: ");
 		String password = consoleReader.readLine();
 		
-		
+		AccountServices check = new AccountServices(username, password);
 		
 		
 	}
