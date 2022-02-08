@@ -9,17 +9,21 @@ public class Account implements Serializable {
 	private String password;
 	private int accountId;
 	private int routNum;
+	private String firstName;
+	private String lastName;
 
 	public Account() {
 		super();
 	}
 
-	public Account(String username, String password, int accountId, int routNum) {
+	public Account(String username, String password, int accountId, int routNum, String firstName, String lastName) {
 		super();
 		this.username = username;
 		this.password = password;
 		this.accountId = accountId;
 		this.routNum = routNum;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	public String getUsername() {
@@ -42,8 +46,8 @@ public class Account implements Serializable {
 		return accountId;
 	}
 
-	public void setAccountId(int accountId) {
-		this.accountId = accountId;
+	public void setAccountId(int uuid) {
+		this.accountId = uuid;
 	}
 
 	public int getRoutNum() {
@@ -53,5 +57,23 @@ public class Account implements Serializable {
 	public void setRoutNum(int routNum) {
 		this.routNum = routNum;
 	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	
 
 }
