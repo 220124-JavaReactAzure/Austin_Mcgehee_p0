@@ -85,15 +85,16 @@ public class AccountDAO implements CrudDAO<Account> {
 
 			newAccount.setAccountId(rand.nextInt());
 
-			String sql = "insert into accounts () values (?, ?, ?)";
+			String sql = "insert into accounts (accountId, username, password, routNum, firstName, lastName) values (?, ?, ?, ?, ?, ?)";
 
 			PreparedStatement ps = conn.prepareStatement(sql);
 
 			ps.setInt(1, newAccount.getAccountId());
-			ps.setString(4, newAccount.getUsername());
-			ps.setString(5, newAccount.getPassword());
-			ps.setString(2, newAccount.getFirstName());
-			ps.setString(3, newAccount.getLastName());
+			ps.setString(2, newAccount.getUsername());
+			ps.setString(3, newAccount.getPassword());
+			ps.setInt(4, newAccount.getRoutNum());
+			ps.setString(5, newAccount.getFirstName());
+			ps.setString(6, newAccount.getLastName());
 
 			int rowsInserted = ps.executeUpdate();
 
