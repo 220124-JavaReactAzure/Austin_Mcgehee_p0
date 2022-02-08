@@ -1,11 +1,17 @@
 package com.revature.project0.models;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
 	
 	private String username;
 	private String password;
 	private int accountId;
 	private int routNum;
+	
+	public Account() {
+		super();
+	}
 	
 	public Account(String username, String password, int accountId, int routNum) {
 		super();
