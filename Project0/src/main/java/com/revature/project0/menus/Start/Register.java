@@ -42,6 +42,7 @@ public class Register extends Menu {
 		
 		try {
 			accountServices.registerNewAccount(account);
+			System.out.println("You created your account!!");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			// e.printStackTrace(); 
