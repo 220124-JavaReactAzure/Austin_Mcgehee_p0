@@ -2,6 +2,7 @@ package com.revature.project0.menus.Start;
 
 import java.io.BufferedReader;
 
+import com.revature.project0.daos.AccountDAO;
 import com.revature.project0.menus.Menu;
 import com.revature.project0.utils.MenuRouter;
 import static com.revature.project0.utils.AppState.shutdown;
@@ -23,7 +24,13 @@ public class Login extends Menu {
 		System.out.println("Password: ");
 		String password = consoleReader.readLine();
 		
-		AccountServices check = new AccountServices(username, password);
+		AccountDAO accountDAO = new AccountDAO();
+		
+		if (accountDAO.findByUsernameAndPassword(username, password) != null) {
+			router.transfer("/dash");
+		}else {
+			router.transfer("/start");
+		}
 		
 		
 	}

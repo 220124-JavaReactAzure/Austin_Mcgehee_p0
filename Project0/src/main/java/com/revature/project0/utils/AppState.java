@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 import com.revature.project0.menus.Start.StartMenu;
 import com.revature.project0.daos.AccountDAO;
+import com.revature.project0.menus.Dashboard;
 import com.revature.project0.menus.Start.Login;
 import com.revature.project0.menus.Start.Register;
 import com.revature.project0.services.AccountServices;
@@ -26,6 +27,7 @@ public class AppState {
 		router.addMenu(new StartMenu(consoleReader, router));
 		router.addMenu(new Login(consoleReader, router));
 		router.addMenu(new Register(consoleReader, router, accountServices));
+		router.addMenu(new Dashboard(consoleReader, router, accountServices));
 		
 		
 	}
