@@ -71,6 +71,35 @@ public class AccountDAO implements CrudDAO<Account> {
 		return null;
 	}
 	
+	public Account findByUsernameAndPassword(String username, String password) {
+		
+		try (Connection conn = ConnectionDriver.getInstance().getConnection()) {
+
+			String sql = "select * from accounts where username = ? and password = ?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Account account = new Account();
+				account.setAccountId(rs.getInt("accountId"));
+				account.setUsername(rs.getString("username"));
+				account.setPassword(rs.getString("password"));
+				account.setFirstName(rs.getString("firstName"));
+				account.setLastName(rs.getString("lastName"));
+
+				return account;
+			}
+
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		return null;		
+	}
+	
 	
 	
 // ###########################################################################################################################################

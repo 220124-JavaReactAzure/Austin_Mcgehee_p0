@@ -15,11 +15,11 @@ public class Register extends Menu {
 	
 	AccountServices accountServices;
 
-	public Register(BufferedReader consoleReader, MenuRouter router, AccountServices accountServices) {
-		super("Register", "/register", consoleReader, router);
+	public Register(BufferedReader buffered, MenuRouter router, AccountServices accountServices) {
+		super("Register", "/register", buffered, router);
 		this.accountServices = accountServices;
 	}
-	
+
 	@Override
 	public void render() throws Exception {
 		// TODO Auto-generated method stub
@@ -41,8 +41,8 @@ public class Register extends Menu {
 		Account account = new Account(username, password, firstName, lastName);
 		
 		try {
-			AccountServices.registerNewAccount(account);
-		} catch (InvalidRequestException e) {
+			accountServices.registerNewAccount(account);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			// e.printStackTrace(); 
 			System.out.println("YOU HAVE PROVIDED INVALID DATA PLEASE TRY AGAIN\n\n\n");
