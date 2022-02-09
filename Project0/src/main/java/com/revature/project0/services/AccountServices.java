@@ -15,8 +15,9 @@ public class AccountServices {
 	}
 
 	public AccountServices(String username, String password) {
-		// TODO Auto-generated constructor stub
 		super();
+		this.accountDAO = new AccountDAO();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Account getSessionAccount() {
