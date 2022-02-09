@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 import com.revature.project0.menus.Start.StartMenu;
 import com.revature.project0.menus.Start.Login;
+import com.revature.project0.menus.Start.Register;
 
 public class AppState {
 
@@ -18,6 +19,7 @@ public class AppState {
 		
 		router.addMenu(new StartMenu(consoleReader, router));
 		router.addMenu(new Login(consoleReader, router));
+		router.addMenu(new Register(consoleReader, router));
 		
 		
 	}

@@ -26,6 +26,15 @@ public class Account implements Serializable {
 		this.lastName = lastName;
 	}
 
+	public Account(String username, String password, String firstName, String lastName) {
+		// TODO Auto-generated constructor stub
+		super();
+		this.username = username;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
 	public String getUsername() {
 		return username;
 	}
