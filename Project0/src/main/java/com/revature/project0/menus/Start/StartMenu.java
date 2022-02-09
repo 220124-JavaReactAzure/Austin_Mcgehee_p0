@@ -21,10 +21,10 @@ public class StartMenu extends Menu {
 		
 		switch(userSel) {
 		case "1":
-			router.transfer("/Login");
+			router.transfer("/login");
 			break;
 		case "2":
-			router.transfer("/Create");
+			router.transfer("/register");
 			break;
 		case "3":
 			shutdown();

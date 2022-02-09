@@ -26,7 +26,7 @@ public class ConnectionDriver {
 
 		// Using .properties for DB credentials (this is to obfuscate)
 		try {
-			prop.load(new FileReader("src/main/resources/db.properties"));
+			prop.load(new FileReader("main/resources/db.properties"));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

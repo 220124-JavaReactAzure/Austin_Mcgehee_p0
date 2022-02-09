@@ -14,6 +14,11 @@ public class AccountServices {
 		this.sessionAccount = null;
 	}
 
+	public AccountServices(String username, String password) {
+		// TODO Auto-generated constructor stub
+		super();
+	}
+
 	public Account getSessionAccount() {
 		return sessionAccount;
 	}
@@ -40,9 +45,14 @@ public class AccountServices {
 		return persistedAccount;
 	}
 
-	private boolean isAccountValid(Account newAccount) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean isAccountValid(Account newAccount) {
+		
+		if(newAccount == null) return false;
+		if(newAccount.getFirstName() == null || newAccount.getFirstName().trim().equals("")) return false;
+		if(newAccount.getLastName() == null || newAccount.getLastName().trim().equals("")) return false;
+		if(newAccount.getUsername() == null || newAccount.getUsername().trim().equals("")) return false;
+		return newAccount.getPassword() != null || !newAccount.getPassword().trim().equals("");
+		
 	}
 
 	public List<Account> getAllAccounts() {
