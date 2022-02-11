@@ -11,6 +11,7 @@ public class Account implements Serializable {
 	private int routNum;
 	private String firstName;
 	private String lastName;
+	private float balance;
 
 	public Account() {
 		super();
@@ -24,6 +25,7 @@ public class Account implements Serializable {
 		this.routNum = routNum;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.balance = 100f;
 	}
 
 	public Account(String username, String password, String firstName, String lastName) {
@@ -33,6 +35,7 @@ public class Account implements Serializable {
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.balance = 100f;
 	}
 
 	public String getUsername() {
@@ -81,6 +84,14 @@ public class Account implements Serializable {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	public float getBalance() {
+		return balance;
+	}
+
+	public void setBalance(float balance) {
+		this.balance = balance;
 	}
 	
 	

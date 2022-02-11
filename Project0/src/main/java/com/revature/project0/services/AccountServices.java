@@ -8,15 +8,21 @@ public class AccountServices {
 
 	private final AccountDAO accountDAO;
 	private Account sessionAccount;
-
+	
 	public AccountServices(AccountDAO accountDAO) {
 		this.accountDAO = accountDAO;
-		this.sessionAccount = null;
+		this.sessionAccount = new Account();
+	}
+
+	public AccountServices(AccountDAO accountDAO, Account account) {
+		this.accountDAO = accountDAO;
+		this.sessionAccount = accountDAO.findByUsername(account.getUsername());
 	}
 
 	public AccountServices(String username, String password) {
 		super();
 		this.accountDAO = new AccountDAO();
+		this.sessionAccount = new Account();
 		// TODO Auto-generated constructor stub
 	}
 

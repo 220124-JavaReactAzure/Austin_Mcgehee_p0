@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 
 import com.revature.project0.services.AccountServices;
 import com.revature.project0.utils.MenuRouter;
+import com.revature.project0.utils.logging.Logger;
 
 public class Dashboard extends Menu {
 
@@ -19,6 +20,11 @@ public class Dashboard extends Menu {
 	@Override
 	public void render() throws Exception {
 		// TODO Auto-generated method stub
+		final Logger logger;
+		logger = Logger.getLogger(true);
+		logger.log("Login Successfull...");
+		
+		
 		System.out.println("Welcome to your DASHBOARD");
 		System.out.print("1)View/edit checking account\n" + "2)Create Checking Account\n" + "3)Exit\n" + ">");
 
